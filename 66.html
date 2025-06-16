@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAREPTA TABERNACLE FELLOWSHIP</title>
+      <style>
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+          background: #f7eef0;
+          color: #2c3e50;
+        }
+
+        header {
+          background-color: #223d63;
+          color: white;
+          padding: 15px 20px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+        }
+
+        header img {
+          height: 120px;
+          margin-right: 50px;
+        }
+
+        header h1 {
+          margin: 0;
+          font-size: 24px;
+          white-space: nowrap;
+          animation: slideLeftToRight 90s linear infinite;
+        }
+
+        @keyframes slideLeftToRight {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .container {
+          max-width: 1000px;
+          margin: auto;
+          padding: 30px 20px;
+          text-align: center;
+        }
+
+        .welcome h2 {
+          font-size: 30px;
+          color: #223d63;
+        }
+
+        .section {
+          background: white;
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+          margin-bottom: 30px;
+        }
+
+        .section h3 {
+          color: #223d63;
+          margin-top: 0;
+        }
+
+        ul {
+          padding-left: 20px;
+          text-align: left;
+        }
+
+        iframe {
+          width: 90%;
+          height: 300px;
+          border: 0;
+          border-radius: 50px;
+          margin-top: 20px;
+        }
+
+        footer {
+          background: #223d63;
+          color: white;
+          text-align: center;
+          padding: 15px;
+        }
+
+        .contact-info {
+          font-size: 16px;
+          margin-top: 10px;
+        }
+
+        .ministries-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+
+        .ministry-box {
+          opacity: 1;
+          transform: translateY(0);
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .ministry-box h4 {
+          margin-top: 0;
+          color: #1b375e;
+        }
+
+        .social-media {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin: 40px 0;
+        }
+
+        .social-media a img {
+          width: 40px;
+          height: 40px;
+          transition: transform 0.3s, filter 0.3s;
+          filter: grayscale(50%);
+        }
+
+        .social-media a:hover img {
+          transform: scale(1.2);
+          filter: grayscale(0%);
+        }
+
+        @keyframes zoomRotateBounce {
+          0% {
+            transform: scale(0.5) rotate(0deg) translateY(30px);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1.2) rotate(15deg);
+            opacity: 1;
+          }
+          70% {
+            transform: scale(0.95) rotate(-10deg);
+          }
+          100% {
+            transform: scale(1) rotate(0deg) translateY(0);
+          }
+        }
+
+        .ministry-box.animate {
+          animation: zoomRotateBounce 0.8s ease;
+        }
+
+        .ministry-box img {
+          width: 200px;
+          height: 230px;
+          border-radius: 8px;
+          cursor: pointer;
+          background: #f4f8fc;
+          padding: 15px;
+          border-left: 5px solid #0b2b57;
+        }
+      </style>
+  </head>
+    <body>
+        <header>
+          <img src="images.jpg" alt="Church Logo">
+          <h1>Sarepta Tabernacle Fellowship</h1>
+        </header>
+
+      <div class="container">
+        <div class="welcome">
+          <h2>Welcome to the official page of Sarepta Tabernacle</h2>
+          <p>Our mission is to preach the Message of the Hour, which is the Word of Christ made manifest to the chosen people of God.</p>
+        </div>
+
+        <div class="section">
+          <h3 id="ministries-title" style="cursor: pointer;">📖 Our Ministries</h3>
+          <div class="ministries-grid">
+            <div class="ministry-box" id="sermons">
+              <a href="sermons.html"><img src="wmb.jpg" alt="Sermons"></a>
+              <h4>Sermons</h4>
+              <p>Weekly Spirit-led messages...</p>
+            </div>
+
+            <div class="ministry-box" id="sunday-school">
+              <a href="sunday-school.html"><img src="kids sunday school.webp" alt="Sunday School"></a>
+              <h4>Sunday School</h4>
+              <p>Biblical teachings for children...</p>
+            </div>
+
+            <div class="ministry-box" id="bible-study">
+              <a href="bible study.html"><img src="bible background.jpg" alt="Bible Study"></a>
+              <h4>Bible Study</h4>
+              <p>Interactive group sessions...</p>
+            </div>
+
+            <div class="ministry-box" id="spoken-word">
+              <a href="spoken word.html"><img src="branham.jpg" alt="Spoken Word"></a>
+              <h4>Spoken Word</h4>
+              <p>Powerful expressions of faith...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>🕒 Fellowship Times</h3>
+          <ul>
+            <li><strong>Tuesdays:</strong> 17:30 – 19:30</li>
+            <li><strong>Sundays:</strong> 13:00 – 15:30</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h3>✝️ About Us</h3>
+          <p>Sarepta Tabernacle Fellowship is a spirit-filled Christian church rooted in biblical truth, community, and worship. We welcome all to grow in Christ, build strong faith, and experience life-changing fellowship.</p>
+          <p><strong>Lead Pastor:</strong> Pastor Josuah Ndaya</p>
+        </div>
+
+        <div class="section">
+          <h3>📞 Contact Us</h3>
+          <p class="contact-info">Phone/WhatsApp: <strong>+27 81 238 2573</strong></p>
+          <p>Email: <em>www.sareptafellowship@gmail.com</em></p>
+        </div>
+
+        <div class="section">
+          <h3>📍 Location</h3>
+          <p>5 1st Street, New Doornfontein, Johannesburg, South Africa</p>
+          <iframe src="https://www.google.com/maps?q=5+1st+Street,+New+Doornfontein,+Johannesburg,+South+Africa&output=embed" allowfullscreen></iframe>
+        </div>
+
+        <div class="social-media">
+          <a href="https://web.facebook.com/SareptaTabernacl" target="_blank">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/sareptatabernaclefellowship" target="_blank">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@sareptatabernaclefellowship" target="_blank">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube">
+          </a>
+          <a href="https://wa.me/27812382573" target="_blank">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        &copy; 2025 Sarepta Tabernacle Fellowship | All Rights Reserved.
+      </footer>
+
+      <script>
+        document.getElementById("ministries-title").addEventListener("click", () => {
+          document.querySelectorAll(".ministry-box").forEach((box, index) => {
+            box.classList.remove("animate");
+            void box.offsetWidth;
+            setTimeout(() => {
+              box.classList.add("animate");
+            }, index * 150);
+          });
+        });
+
+        const boxIds = ["sermons", "sunday-school", "bible-study", "spoken-word"];
+        boxIds.forEach(id => {
+          document.getElementById(id).addEventListener("click", () => {
+            const box = document.getElementById(id);
+            box.classList.remove("animate");
+            void box.offsetWidth;
+            box.classList.add("animate");
+          });
+        });
+      </script>
+    </body>
+</html>
