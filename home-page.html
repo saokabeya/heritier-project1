@@ -13,45 +13,53 @@
 
       body {
         font-family: Arial, sans-serif;
-        background: url("CLOUD OF GLORY.jpg") no-repeat center center fixed;
+        background: url("photos/CLOUD OF GLORY.jpg") no-repeat center center
+          fixed;
         background-size: cover;
         color: #fff;
         line-height: 1.6;
       }
 
       header {
-        display: flex;
-        align-items: center;
+        position: relative;
         background-color: rgba(47, 58, 117, 0.9);
         color: white;
         padding: 10px 20px;
+        display: flex;
+        align-items: center;
         overflow: hidden;
-        position: relative;
         z-index: 10;
+        height: 100px;
       }
 
       header img {
         width: 80px;
         height: auto;
         margin-right: 20px;
+        z-index: 2;
+        position: relative;
       }
 
-      header h1 {
+      .scrolling-text {
+        position: absolute;
         white-space: nowrap;
-        animation: scroll-right 10s linear infinite;
         font-size: 1.5em;
+        animation: scroll-right 10s linear infinite;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+        z-index: 1; /* behind the logo */
       }
 
       @keyframes scroll-right {
         0% {
-          transform: translateX(100%);
+          left: 100%;
         }
         100% {
-          transform: translateX(-100%);
+          left: -100%;
         }
       }
 
-      /* NAVIGATION BAR */
       nav {
         background-color: rgba(30, 42, 90, 0.9);
         padding: 10px 20px;
@@ -156,6 +164,12 @@
         transform: scale(1.1);
       }
 
+      .ministry-box.animate {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
       .social-media {
         text-align: center;
         padding: 15px;
@@ -197,11 +211,12 @@
   </head>
   <body>
     <header>
-      <img src="images.jpg" alt="Church Logo" />
-      <h1>Welcome to the official page of Sarepta Tabernacle</h1>
+      <img src="photos/images.jpg" alt="Church Logo" />
+      <div class="scrolling-text">
+        Welcome to the official page of Sarepta Tabernacle
+      </div>
     </header>
 
-    <!-- NAVIGATION -->
     <nav>
       <div class="hamburger" onclick="toggleMenu()">
         <span></span>
@@ -228,22 +243,29 @@
       <h3 id="ministries-title" style="cursor: pointer">📖 Our Ministries</h3>
       <div class="ministries-grid">
         <div class="ministry-box" id="sermons">
-          <a href="sermons.html"><img src="wmb.jpg" /></a>
+          <a href="sermons.html"><img src="photos/wmb.jpg" alt="Sermons" /></a>
           <h4>Sermons</h4>
           <p>Weekly Spirit-led messages...</p>
         </div>
+
         <div class="ministry-box" id="sunday-school">
-          <a href="sunday-school.html"><img src="kids sunday school.webp" /></a>
+          <a href="sunday-school.html"
+            ><img src="photos/kids sunday school.webp" alt="Sunday School"
+          /></a>
           <h4>Sunday School</h4>
           <p>Biblical teachings for children...</p>
         </div>
         <div class="ministry-box" id="bible-study">
-          <a href="bible study.html"><img src="bible background.jpg" /></a>
+          <a href="bible-study.html"
+            ><img src="photos/bible background.jpg" alt="Bible Study"
+          /></a>
           <h4>Bible Study</h4>
           <p>Interactive group sessions...</p>
         </div>
         <div class="ministry-box" id="spoken-word">
-          <a href="spoken word.html"><img src="branham.jpg" /></a>
+          <a href="spoken-word.html"
+            ><img src="photos/branham.jpg" alt="Spoken Word"
+          /></a>
           <h4>Spoken Word</h4>
           <p>Powerful expressions of faith...</p>
         </div>
@@ -351,7 +373,9 @@
       }
 
       ["sermons", "sunday-school", "bible-study", "spoken-word"].forEach((id) =>
-        document.getElementById(id).addEventListener("click", () => animateBox(id))
+        document
+          .getElementById(id)
+          .addEventListener("click", () => animateBox(id))
       );
 
       document.getElementById("learnMoreBtn").addEventListener("click", () => {
